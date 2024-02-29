@@ -1,0 +1,3 @@
+sudo apt install fzf
+curl -s "https://get.sdkman.io" | bash
+

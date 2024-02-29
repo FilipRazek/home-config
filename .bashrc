@@ -43,8 +43,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. ~/.sdkman/candidates/springboot/current/shell-completion/bash/spring
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -64,16 +62,11 @@ function kll {
     ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs kill -9
 }
 
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/filip/google-cloud-sdk/path.bash.inc' ]; then . '/home/filip/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/filip/google-cloud-sdk/completion.bash.inc' ]; then . '/home/filip/google-cloud-sdk/completion.bash.inc'; fi
-
-. "$HOME/.cargo/env"
 
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/legacy_credentials/filip.razek@polyconseil.fr/adc.json"
 
