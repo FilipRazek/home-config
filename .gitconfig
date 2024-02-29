@@ -1,0 +1,20 @@
+[alias]
+	s = status
+	ps = push
+	p = pull
+	c = commit -m
+	a = add .
+	pf = push --force-with-lease
+	ca = commit --amend
+	can = commit --amend --no-edit
+	l = log --oneline --graph
+	cl = clone
+[user]
+	name = Filip Razek
+	email = filip@razek.net
+[core]
+	editor = nvim
+[diff]
+	tool = nvimdiff  
+[init]
+	defaultBranch = main
