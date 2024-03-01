@@ -9,6 +9,7 @@
 	can = commit --amend --no-edit
 	l = log --oneline --graph
 	cl = clone
+	rss = restore --staged
 [user]
 	name = Filip Razek
 	email = filip@razek.net
