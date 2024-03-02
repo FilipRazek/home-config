@@ -11,6 +11,7 @@
 	cl = clone
 	rss = restore --staged
 	ds = diff --staged
+	rs = restore
 [user]
 	name = Filip Razek
 	email = filip@razek.net
