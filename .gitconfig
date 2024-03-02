@@ -10,6 +10,7 @@
 	l = log --oneline --graph
 	cl = clone
 	rss = restore --staged
+	ds = diff --staged
 [user]
 	name = Filip Razek
 	email = filip@razek.net
