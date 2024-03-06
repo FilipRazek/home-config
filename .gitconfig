@@ -12,6 +12,7 @@
 	rss = restore --staged
 	ds = diff --staged
 	rs = restore
+	co = checkout
 [user]
 	name = Filip Razek
 	email = filip@razek.net
