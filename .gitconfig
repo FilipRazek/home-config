@@ -13,6 +13,8 @@
 	ds = diff --staged
 	rs = restore
 	co = checkout
+	rc = rebase --continue
+	ra = rebase --abort
 [user]
 	name = Filip Razek
 	email = filip@razek.net
