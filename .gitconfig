@@ -15,6 +15,7 @@
 	co = checkout
 	rc = rebase --continue
 	ra = rebase --abort
+	bD = branch -D
 [user]
 	name = Filip Razek
 	email = filip@razek.net
