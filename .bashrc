@@ -63,6 +63,10 @@ function kll {
     ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs kill -9
 }
 
+function gt {
+    cd $(dirname "$1")
+}
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/filip/google-cloud-sdk/path.bash.inc' ]; then . '/home/filip/google-cloud-sdk/path.bash.inc'; fi
 
