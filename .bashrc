@@ -51,6 +51,7 @@ export JAVA_HOME=~/.jdks/temurin-21.0.1
 export PATH=$PATH:$JAVA_HOME
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:~/bin
 
 source ~/.bash-powerline.sh
 
