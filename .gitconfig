@@ -17,6 +17,7 @@
 	ra = rebase --abort
 	bD = branch -D
 	b = branch
+	d = diff
 [user]
 	name = Filip Razek
 	email = filip@razek.net
