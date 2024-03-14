@@ -6,3 +6,6 @@ sudo dpkg -i ov_0.33.3-1_amd64.deb
 
 cargo install tealdeer
 cargo install procs
+
+npm install --global yarn
+
