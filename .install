@@ -5,3 +5,4 @@ curl -L -O https://github.com/noborus/ov/releases/download/v0.33.3/ov_0.33.3-1_a
 sudo dpkg -i ov_0.33.3-1_amd64.deb
 
 cargo install tealdeer
+cargo install procs
