@@ -30,3 +30,5 @@
 [push]
 	autoSetupRemote = true
 	default = current
+[commit]
+	gpgsign = true
