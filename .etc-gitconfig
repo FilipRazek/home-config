@@ -21,7 +21,6 @@
 	ap = add -p
 [user]
 	name = Filip Razek
-	email = filip@razek.net
 [core]
 	editor = nvim
 [diff]
@@ -33,3 +32,4 @@
 	default = current
 [commit]
 	gpgsign = true
+
