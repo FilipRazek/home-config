@@ -18,6 +18,7 @@
 	bD = branch -D
 	b = branch
 	d = diff
+	ap = add -p
 [user]
 	name = Filip Razek
 	email = filip@razek.net
