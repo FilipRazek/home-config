@@ -9,3 +9,5 @@ cargo install procs
 
 sudo npm install --global yarn
 
+sudo apt install xclip
+
