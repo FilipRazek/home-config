@@ -83,3 +83,4 @@ source <(ng completion script)
 # Load fzf key bindings
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
+export GPG_TTY=$(tty)
