@@ -3,6 +3,7 @@
 	ps = push
 	p = pull
 	c = commit -S -m
+    ac = commit -S -a -m
 	a = add .
 	pf = push --force-with-lease
 	ca = commit -S --amend
