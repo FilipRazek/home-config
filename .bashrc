@@ -84,3 +84,11 @@ source <(ng completion script)
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 export GPG_TTY=$(tty)
+
+# pnpm
+export PNPM_HOME="/home/filip/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
