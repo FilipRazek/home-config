@@ -20,6 +20,9 @@
 	b = branch
 	d = diff
 	ap = add -p
+	r = rebase
+	cf = config
+	cp = cherry-pick
 [user]
 	name = Filip Razek
 [core]
