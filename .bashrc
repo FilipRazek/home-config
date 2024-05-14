@@ -23,30 +23,41 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-fi
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
 # Autocomplete
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+# fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use --lts > /dev/null
+
+function lazy_load_nvm {
+  unset -f npm node nvm
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+}
+
+function npm {
+ lazy_load_nvm
+ npm "$@"
+}
+
+function node {
+  lazy_load_nvm
+  node "$@"
+}
+
+function nvm {
+  lazy_load_nvm
+  nvm "$@"
+}
 
 export JAVA_HOME=~/.jdks/temurin-21.0.1
 export PATH=$PATH:$JAVA_HOME
@@ -75,10 +86,6 @@ if [ -f '/home/filip/google-cloud-sdk/path.bash.inc' ]; then . '/home/filip/goog
 if [ -f '/home/filip/google-cloud-sdk/completion.bash.inc' ]; then . '/home/filip/google-cloud-sdk/completion.bash.inc'; fi
 
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/legacy_credentials/filip.razek@polyconseil.fr/adc.json"
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
 # Load fzf key bindings
 source /usr/share/doc/fzf/examples/key-bindings.bash
