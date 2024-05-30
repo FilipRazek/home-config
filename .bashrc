@@ -72,7 +72,7 @@ function mkc {
 }
 
 function kll {
-    ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs kill -9
+    ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs sudo kill -9
 }
 
 function gt {
