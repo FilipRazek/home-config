@@ -37,27 +37,9 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 
-function lazy_load_nvm {
-  unset -f npm node nvm
-  export NVM_DIR=~/.nvm
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
-}
-
-function npm {
- lazy_load_nvm
- npm "$@"
-}
-
-function node {
-  lazy_load_nvm
-  node "$@"
-}
-
-function nvm {
-  lazy_load_nvm
-  nvm "$@"
-}
+export NVM_DIR=~/.nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 
 export JAVA_HOME=~/.jdks/temurin-21.0.1
 export PATH=$PATH:$JAVA_HOME
