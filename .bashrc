@@ -40,6 +40,7 @@ export NVM_DIR="$HOME/.nvm"
 export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+nvm use --lts > /dev/null
 
 export JAVA_HOME=~/.jdks/temurin-21.0.1
 export PATH=$PATH:$JAVA_HOME
