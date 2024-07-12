@@ -6,6 +6,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+
 # Window size
 shopt -s checkwinsize
 
@@ -35,6 +36,7 @@ fi
 #     . /usr/share/bash-completion/bash_completion
 # fi
 
+export EDITOR=vim
 export NVM_DIR="$HOME/.nvm"
 
 export NVM_DIR=~/.nvm
