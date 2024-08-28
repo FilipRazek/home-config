@@ -44,7 +44,7 @@ export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 nvm use --lts > /dev/null
 
-export JAVA_HOME=~/.jdks/temurin-21.0.1
+export JAVA_HOME=~/.jdks/temurin-21.0.1/bin
 export PATH=$PATH:$JAVA_HOME
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
