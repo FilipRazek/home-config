@@ -1,12 +1,14 @@
 sudo apt install fzf
 curl -s "https://get.sdkman.io" | bash
 
-curl -L -O https://github.com/noborus/ov/releases/download/v0.33.3/ov_0.33.3-1_amd64.deb
-sudo dpkg -i ov_0.33.3-1_amd64.deb
-
-cargo install tealdeer
-
 npm install --global yarn
 
 sudo apt install xclip
 sudo apt install ghex
+sudo apt install golang-go
+sudo apt install rustup
+rustup default stable
+
+cargo install tealdeer
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
