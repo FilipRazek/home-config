@@ -65,6 +65,9 @@ function gt {
     cd $(dirname "$1")
 }
 
+alias "c=xclip -selection clipboard"
+alias "v=xclip -o -selection clipboard"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/filip/google-cloud-sdk/path.bash.inc' ]; then . '/home/filip/google-cloud-sdk/path.bash.inc'; fi
 
