@@ -6,7 +6,6 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-
 # Window size
 shopt -s checkwinsize
 
@@ -30,11 +29,6 @@ alias grep='grep --color=auto'
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
-
-# Autocomplete
-# if [ -f /usr/share/bash-completion/bash_completion ]; then
-#     . /usr/share/bash-completion/bash_completion
-# fi
 
 export EDITOR=vim
 export NVM_DIR="$HOME/.nvm"
@@ -68,28 +62,14 @@ function gt {
 alias "c=xclip -selection clipboard"
 alias "v=xclip -o -selection clipboard"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/filip/google-cloud-sdk/path.bash.inc' ]; then . '/home/filip/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/filip/google-cloud-sdk/completion.bash.inc' ]; then . '/home/filip/google-cloud-sdk/completion.bash.inc'; fi
-
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/legacy_credentials/filip.razek@polyconseil.fr/adc.json"
-
 # Load fzf key bindings
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 export GPG_TTY=$(tty)
 
-# pnpm
-export PNPM_HOME="/home/filip/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 if [ ! -f '/etc/gitconfig' ]; then sudo ln -s ~/.etc-gitconfig /etc/gitconfig; fi
+
+if [ -f '/home/'$USER'/.bashrc.local' ]; then . '/home/'$USER'/.bashrc.local'; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
