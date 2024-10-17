@@ -1,5 +1,8 @@
+sudo apt install neovim
 sudo apt install fzf
 curl -s "https://get.sdkman.io" | bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 npm install --global yarn
 
@@ -12,6 +15,7 @@ rustup default stable
 cargo install tealdeer
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
