@@ -23,6 +23,8 @@
 	r = rebase
 	cf = config
 	cp = cherry-pick
+	cfg = cf --global
+	ll = l -5
 [user]
 	name = Filip Razek
 [core]
