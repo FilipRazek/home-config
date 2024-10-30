@@ -1,3 +1,4 @@
+#test
 echo Hi, $USER!
 
 # History
