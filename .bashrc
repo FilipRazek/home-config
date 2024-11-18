@@ -48,6 +48,8 @@ export PATH=$PATH:~/bin
 
 source ~/.bash-powerline.sh
 
+export PATH=$PATH:~/k
+
 function mkc {
 	mkdir -p -- "$1" && cd -- "$1" || exit
 }
