@@ -7,3 +7,5 @@
 !.etc-gitconfig
 !.bash_aliases
 !.bash-powerline.sh
+!resources/
+!resources/*
