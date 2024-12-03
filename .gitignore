@@ -9,3 +9,5 @@
 !.bash-powerline.sh
 !resources/
 !resources/*
+!custom-scripts/
+!custom-scripts/*

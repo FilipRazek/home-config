@@ -1,4 +1,3 @@
-#test
 echo Hi, $USER!
 
 # History
@@ -49,6 +48,7 @@ export PATH=$PATH:~/bin
 source ~/.bash-powerline.sh
 
 export PATH=$PATH:~/k
+export PATH=$PATH:~/custom-scripts
 
 function mkc {
 	mkdir -p -- "$1" && cd -- "$1" || exit

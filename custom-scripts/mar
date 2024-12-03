@@ -1,0 +1,10 @@
+awk '
+BEGIN { LINES = 3 } # lines kept at the beginning and the end
+{ lines[NR] = $0 }
+END { if (NR <= LINES * 2) for (i = 1; i <= NR; i++) print(lines[i])
+      else {
+          for (i = 1; i <= LINES; i++) print(lines[i])
+          print("...")
+          for (i = NR - LINES + 1; i <= NR; i++) print(lines[i])
+      }
+}' $*
