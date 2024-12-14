@@ -62,6 +62,19 @@ function gt {
     cd $(dirname "$1")
 }
 
+function timer() {
+    local minutes=$1
+    local seconds=${2:-0}
+    local total_seconds=$((minutes * 60 + seconds))
+    
+    echo "Timer set for $minutes:$(printf "%02d" $seconds)"
+    sleep $total_seconds
+    play -q -n synth 0.5 sine 440 remix 1 fade 0 0.5 0.1 \
+              synth 0.5 sine 880 remix 1 fade 0 0.5 0.1 \
+              synth 0.5 sine 660 remix 1 fade 0 0.5 0.1 2>/dev/null
+}
+
+
 alias "c=xclip -selection clipboard"
 alias "v=xclip -o -selection clipboard"
 
