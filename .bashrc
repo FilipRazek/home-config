@@ -93,3 +93,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 . "/home/hypathia/.deno/env"
+[ -f "/home/hypathia/.ghcup/env" ] && . "/home/hypathia/.ghcup/env" # ghcup-env
