@@ -25,16 +25,12 @@ esac
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias df="cd ~/connect-monorepo/apps/front && npx vite"
-alias da="dm && nx serve api"
-alias dm="cd ~/connect-monorepo"
-alias dd="cd ~/connect-demo"
 alias python="python3"
 alias john="~/.local/john/run/john"
 
 
 if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+source ~/.bash_aliases
 fi
 
 export EDITOR=vim
@@ -52,23 +48,20 @@ export PATH=$PATH:~/bin
 source ~/.bash-powerline.sh
 
 function mkc {
-	mkdir -p -- "$1" && cd -- "$1" || exit
+mkdir -p -- "$1" && cd -- "$1" || exit
 }
 
 function kll {
-    ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs sudo kill -9
+ps aux | grep "$1" | awk '{print $2 }' | head -n -1 | xargs sudo kill -9
 }
 
 function gt {
-    cd $(dirname "$1")
+cd $(dirname "$1")
 }
 
 
 alias "c=xclip -selection clipboard"
 alias "v=xclip -o -selection clipboard"
-
-# Load fzf key bindings
-source /usr/share/doc/fzf/examples/key-bindings.bash
 
 export GPG_TTY=$(tty)
 
