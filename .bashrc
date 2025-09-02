@@ -25,6 +25,13 @@ esac
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias df="cd ~/connect-monorepo/apps/front && npx vite"
+alias da="dm && nx serve api"
+alias dm="cd ~/connect-monorepo"
+alias dd="cd ~/connect-demo"
+alias python="python3"
+alias john="~/.local/john/run/john"
+
 
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
@@ -38,17 +45,11 @@ export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 nvm use --lts > /dev/null
 
-export JAVA_HOME=~/.jdks/temurin-21.0.1
-export PATH=$PATH:$JAVA_HOME
-export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:~/bin
 
 source ~/.bash-powerline.sh
-
-export PATH=$PATH:~/k
-export PATH=$PATH:~/custom-scripts
 
 function mkc {
 	mkdir -p -- "$1" && cd -- "$1" || exit
@@ -60,18 +61,6 @@ function kll {
 
 function gt {
     cd $(dirname "$1")
-}
-
-function timer() {
-    local minutes=$1
-    local seconds=${2:-0}
-    local total_seconds=$((minutes * 60 + seconds))
-    
-    echo "Timer set for $minutes:$(printf "%02d" $seconds)"
-    sleep $total_seconds
-    play -q -n synth 0.5 sine 440 remix 1 fade 0 0.5 0.1 \
-              synth 0.5 sine 880 remix 1 fade 0 0.5 0.1 \
-              synth 0.5 sine 660 remix 1 fade 0 0.5 0.1 2>/dev/null
 }
 
 
@@ -87,10 +76,24 @@ if [ ! -f '/etc/gitconfig' ]; then sudo ln -s ~/.etc-gitconfig /etc/gitconfig; f
 
 if [ -f '/home/'$USER'/.bashrc.local' ]; then . '/home/'$USER'/.bashrc.local'; fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+. "/home/filip/.deno/env"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-. "/home/hypathia/.deno/env"
-[ -f "/home/hypathia/.ghcup/env" ] && . "/home/hypathia/.ghcup/env" # ghcup-env
+# Created by `pipx` on 2024-12-05 08:47:08
+export PATH="$PATH:/home/filip/.local/bin"
+. "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/filip/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH="$HOME/.local/jtr/run:$PATH"
